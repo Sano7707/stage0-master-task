@@ -91,7 +91,8 @@ public class ArrayTasksTest {
     public void sortRaggedArrayTest(RaggedArray arr, RaggedArray expectedArr) {
 
         assertArrayEquals(expectedArr.getArr(), arrayTasks.sortRaggedArray(arr.getArr()),
-                "I think, something went wrong with sorting ragged array implementation");
+                "I think, something went wrong with sorting ragged array implementation" +
+                       "expected " + Arrays.deepToString(expectedArr.getArr()) +"  we get " + Arrays.deepToString(arrayTasks.sortRaggedArray(arr.getArr())));
     }
 
 

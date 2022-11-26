@@ -125,24 +125,22 @@ public class ArrayTasks {
         for (int[] ints : arr) {
             sort(ints);
         }
-        for (int j = 0; j < arr.length; j++) {
-            int k = j;
-            int min = arr[j].length;
+
+        int j = 0;
+        for (int a = 1; a  <= 3 ; a++) {
             for (int i = j; i < arr.length; i++) {
-                if (arr[i].length < min) {
-                    min = arr[i].length;
-                    k = i;
+                if (arr[i].length == a) {
+                    int[] temp = arr[i];
+                    if (i - j >= 0) System.arraycopy(arr, j, arr, j + 1, i - j);
+                    arr[j] = temp;
+                    j++;
                 }
             }
-
-            int[] temp = arr[j];
-            arr[j] = arr[k];
-            arr[k] = temp;
         }
         return arr;
     }
 
-    public static int[] sort(int[] arr){
+    public static void sort(int[] arr){
         for (int j = 0; j < arr.length; j++) {
             int k = j;
             int min = arr[j];
@@ -156,7 +154,6 @@ public class ArrayTasks {
             arr[j] = arr[k];
             arr[k] = temp;
         }
-        return arr;
     }
 
 }
